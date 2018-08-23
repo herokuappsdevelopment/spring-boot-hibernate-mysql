@@ -71,4 +71,5 @@ public class DbConfig {
 
 		return hibernateTransactionManager;
 	}
+	
 }
