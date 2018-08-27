@@ -47,6 +47,8 @@ public class DbConfig {
 		factory.setDataSource(getDataSource());
 		factory.setHibernateProperties(hibernateProperties());
 		factory.setPackagesToScan(new String[] { "com.datasys.springboothibernate.model" });
+		factory.setAnnotatedPackages("com.datasys.springboothibernate.entity");
+		
 		return factory;
 
 	}
@@ -54,7 +56,7 @@ public class DbConfig {
 	public Properties hibernateProperties() {
 		Properties properties = new Properties();
 		properties.putIfAbsent("hibernate.dialect", dialect);
-		properties.putIfAbsent("hibernate.hbm2ddl.auto", "create");
+		properties.putIfAbsent("hibernate.hbm2ddl.auto", "validate");
 		properties.putIfAbsent("hibernate.show_sql", "true");
 		properties.putIfAbsent("hibernate.format_sql", "true");
 
